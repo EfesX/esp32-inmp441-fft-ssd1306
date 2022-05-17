@@ -58,7 +58,7 @@ void mic_fft_task(void *p){
 
         for (uint8_t i = 0; i < SAMPLE_BUFFER_SIZE / 2; i++) {
             y_cf_1[i] = (10*log10f((y_cf_1[i * 2 + 0] * y_cf_1[i * 2 + 0] + y_cf_1[i * 2 + 1] * y_cf_1[i * 2 + 1])/SAMPLE_BUFFER_SIZE));
-            y_cf_1[i] = (y_cf_1[i] - FFT_OFFSET) * FFT_SCALE_FACTOR;
+            y_cf_1[i] = (y_cf_1[i] + FFT_OFFSET) * FFT_SCALE_FACTOR;
         }
 
         ssd1306_clear(oled);
