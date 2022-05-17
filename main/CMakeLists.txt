@@ -1,0 +1,9 @@
+idf_component_register(
+    SRCS 
+        "main.c" 
+        "wifi.c" 
+        "mic_spectrum.c"
+        "ssd1306/ssd1306_esp32.c"
+    INCLUDE_DIRS 
+        "."
+)
